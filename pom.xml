@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>BlueEHR_Automaion</groupId>
+	<artifactId>BlueEHR_Automaion</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>BlueEHR_Automaion</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://www.example.com</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.release>16</maven.compiler.release>
+		<aspectj-version>1.9.24</aspectj-version>
+		<selenium-version>4.36.0</selenium-version>
+		<testNG-version>7.11.0</testNG-version>
+		<Externt-version>4.1.7</Externt-version>
+		<allure-version>2.24.0</allure-version>
+		<cucumber-java>7.20.1</cucumber-java>
+		<cucumber-testNG>7.20.1</cucumber-testNG>
+		<pico-version>7.20.1</pico-version>
+		<allure-cucumber-version>2.27.0</allure-cucumber-version>
+<!--		<extent-grass-version>1.14.0</extent-grass-version>-->
+	</properties>
+
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber-java}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>${cucumber-testNG}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${selenium-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testNG-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectj-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>${Externt-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>${allure-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-picocontainer</artifactId>
+			<version>${pico-version}</version> <scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-cucumber7-jvm</artifactId>
+			<version>${allure-cucumber-version}</version> <scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>io.cucumber</groupId>
+					<artifactId>messages</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>tech.grasshopper</groupId>-->
+<!--			<artifactId>extentreports-cucumber7-adapter</artifactId>-->
+<!--			<version>${extent-grass-version}</version>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<!-- Maven Compiler Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version> <!-- Latest version as of now -->
+				<configuration>
+					<source>16</source> <!-- Java version, adjust as needed -->
+					<target>16</target> <!-- Java version, adjust as needed -->
+				</configuration>
+			</plugin>
+
+			<!-- Maven Surefire Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.2.5</version>
+				<configuration>
+					<forkCount>4</forkCount>
+					<reuseForks>true</reuseForks>
+					<suiteXmlFiles>
+						<suiteXmlFile>src/test/resources/testrunners/testRunnerCucumber.xml</suiteXmlFile>
+					</suiteXmlFiles>
+
+					<argLine>
+						<!-- -Dfile.encoding=${project.build.sourceEncoding}-->
+						-javaagent:"C:\Users\Sugumar Raja\.m2\repository\org\aspectj\aspectjweaver\${aspectj-version}\aspectjweaver-${aspectj-version}.jar"
+					</argLine>
+				</configuration>
+
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjweaver</artifactId>
+						<version>${aspectj-version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+</project>
