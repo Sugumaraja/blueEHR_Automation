@@ -64,7 +64,7 @@ public class ElementUtil {
 	public void actionDoubleClickElement(By locator) {
 		WebElement target = getElement(locator);
 		Actions act = new Actions(driver);
-		act.moveToElement(target).doubleClick().build().perform();
+		act.moveToElement(target).doubleClick(target).build().perform();
 	}
 	public void actionClick(By locator) {
 		WebElement target = getElement(locator);
@@ -365,7 +365,7 @@ public class ElementUtil {
 
 	public void clickWithPresenceWithStaticWait(By locator, int time) {
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(4500);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

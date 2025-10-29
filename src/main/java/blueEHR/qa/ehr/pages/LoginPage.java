@@ -51,7 +51,6 @@ private	String server;
  public PatientCreationPage navigateToPatientCreation(int waitTime) {
 		getUserDetail();
 	 ele.clickWithPresenceWithStaticWait(newPatientBtn,waitTime);
-//	 ele.actionClickElement(newPatientBtn);
 	 return new PatientCreationPage(driver);
  }
 }

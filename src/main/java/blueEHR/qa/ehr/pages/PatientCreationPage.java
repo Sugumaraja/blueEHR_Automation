@@ -75,23 +75,8 @@ private By dateList =By.cssSelector("div#ui-datepicker-div tbody td>a");
 	}
 	public void navigateToPatientCreation(int timeout) {
 		ele.actionDoubleClickElement(newPatientBtn);
-//		 ele.clickWithPresenceRegen(newPatientBtn,timeout);
 	}
 	
-//	public boolean patientSearchAndList(String fName,String mName, int waitTime) {
-//		boolean flag=false;
-//		driver.switchTo().defaultContent();
-//		ele.sendTextwithWait(srchField, fName+" "+mName,waitTime);
-//		List<String> result = ele.getDropListTextWithWait(resultList,waitTime);
-//		ele.clearField(srchField);
-//		 if(result.contains((fName+" "+mName).toUpperCase())){
-//			 System.out.println("verified successfully");
-//			 flag=true;
-//		 }
-//		return flag;
-//	}
-
-
 
 
 }
