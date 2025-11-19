@@ -34,8 +34,8 @@ public class LoginPageStepDef  {
     public void while_click_on_the_login_button() {
         context.lp.clickLoginBtn();
     }
-    @Then("The user should get logged in succesfully")
-    public void The_user_should_get_logged_in_succesfully() {
+    @Then("The user should get logged in successfully")
+    public void The_user_should_get_logged_in_successfully() {
         System.out.println("Verifying user name");
         String value =  context.lp.getUserDetail();
         Assert.assertEquals(value, "zh administrator");

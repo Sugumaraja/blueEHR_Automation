@@ -9,7 +9,7 @@ Feature: Login function and Page Navigation Check.
     Scenario: Successful Login with valid credentials.
       Given I have entered valid facility and username and password from propertyFile
       When While click on the login button
-      Then The user should get logged in succesfully
+      Then The user should get logged in successfully
       Then close the browser
 
 

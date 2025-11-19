@@ -13,7 +13,10 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.release>16</maven.compiler.release>
+		<maven.compiler.source>19</maven.compiler.source>
+		<maven.compiler.target>19</maven.compiler.target>
+		<maven.compiler.release>19</maven.compiler.release>
+
 		<aspectj-version>1.9.24</aspectj-version>
 		<selenium-version>4.36.0</selenium-version>
 		<testNG-version>7.11.0</testNG-version>
@@ -101,8 +104,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version> <!-- Latest version as of now -->
 				<configuration>
-					<source>16</source> <!-- Java version, adjust as needed -->
-					<target>16</target> <!-- Java version, adjust as needed -->
+					<source>19</source> <!-- Java version, adjust as needed -->
+					<target>19</target> <!-- Java version, adjust as needed -->
 				</configuration>
 			</plugin>
 
